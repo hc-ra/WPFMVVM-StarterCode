@@ -1,0 +1,10 @@
+F:\PROG\C#\WPFMMVM\ZzaDashboard\Zza.Data\bin\Debug\Zza.Data.dll.config
+F:\PROG\C#\WPFMMVM\ZzaDashboard\Zza.Data\bin\Debug\Zza.Data.dll
+F:\PROG\C#\WPFMMVM\ZzaDashboard\Zza.Data\bin\Debug\Zza.Data.pdb
+F:\PROG\C#\WPFMMVM\ZzaDashboard\Zza.Data\bin\Debug\EntityFramework.dll
+F:\PROG\C#\WPFMMVM\ZzaDashboard\Zza.Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\PROG\C#\WPFMMVM\ZzaDashboard\Zza.Data\bin\Debug\EntityFramework.xml
+F:\PROG\C#\WPFMMVM\ZzaDashboard\Zza.Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\PROG\C#\WPFMMVM\ZzaDashboard\Zza.Data\obj\Debug\Zza.Data.csprojResolveAssemblyReference.cache
+F:\PROG\C#\WPFMMVM\ZzaDashboard\Zza.Data\obj\Debug\Zza.Data.dll
+F:\PROG\C#\WPFMMVM\ZzaDashboard\Zza.Data\obj\Debug\Zza.Data.pdb
