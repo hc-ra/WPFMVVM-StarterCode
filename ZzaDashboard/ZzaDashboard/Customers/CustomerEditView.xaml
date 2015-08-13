@@ -3,9 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:local="clr-namespace:ZzaDashboard.Customers"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300"
-             Loaded="OnLoaded">
+             d:DesignHeight="300" d:DesignWidth="300" >
     <UserControl.Resources>
         <Style x:Key="fieldLabelStyle" TargetType="TextBlock">
             <Setter Property="HorizontalAlignment" Value="Right"/>
@@ -17,6 +19,15 @@
             <Setter Property="Margin" Value="3"/>
         </Style>
     </UserControl.Resources>
+    <UserControl.DataContext>
+        <local:CustomerEditViewModel CustomerID="11da4696-cea3-4a6d-8e83-013f1c479618"/>
+    </UserControl.DataContext>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <ei:CallMethodAction TargetObject="{Binding}"
+                                 MethodName="LoadCustomer"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -34,16 +45,17 @@
         <TextBlock Style="{StaticResource fieldLabelStyle}"
                    Grid.Row="2">Phone</TextBlock>
 
-        <TextBox x:Name="FirstNameTextBox" Text="{Binding FirstName}"
+        <TextBox x:Name="FirstNameTextBox" Text="{Binding Customer.FirstName}"
                  Style="{StaticResource fieldStyle}" Grid.Column="1" Grid.Row="0"/>
-        <TextBox x:Name="LastNameTextBox" Text="{Binding LastName}" Style="{StaticResource fieldStyle}"
+        <TextBox x:Name="LastNameTextBox" Text="{Binding Customer.LastName}" Style="{StaticResource fieldStyle}"
                  Grid.Column="1" Grid.Row="1"/>
-        <TextBox x:Name="PhoneTextBox" Text="{Binding Phone}" Style="{StaticResource fieldStyle}"
+        <TextBox x:Name="PhoneTextBox" Text="{Binding Customer.Phone}" Style="{StaticResource fieldStyle}"
                  Grid.Column="1" Grid.Row="2"/>
 
         <StackPanel Grid.ColumnSpan="2" Grid.Row="3"
                     HorizontalAlignment="Right" Margin="3">
-            <Button x:Name="saveButton" Content="Save" Width="75" Click="OnSave"/>
+            <Button x:Name="saveButton" Content="Save" Width="75" 
+                    Command="{Binding SaveCommand}"/>
         </StackPanel>
     </Grid>
 </UserControl>
